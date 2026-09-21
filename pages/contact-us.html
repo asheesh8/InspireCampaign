@@ -1,0 +1,59 @@
+
+  <main id="main">
+    <header class="page-head" data-tone="red">
+      <span class="art art--lamp art--desk" aria-hidden="true" style="width:300px; --o:.08"></span>
+      <div class="wrap page-head__inner">
+        <h1 class="h1 reveal">Let's <em>connect.</em></h1>
+        <p class="lede reveal" style="--d:1">Share your details and what you're working on. We'll reach out soon.</p>
+      </div>
+    </header>
+
+    <section class="contact" aria-label="Contact form">
+      <div class="wrap contact__inner">
+        <form class="form reveal" data-contact novalidate action="/api/contact" method="post">
+          <div class="field">
+            <label for="first">First name</label>
+            <input id="first" name="firstName" autocomplete="given-name" required aria-describedby="first-err">
+            <p class="field__err" id="first-err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="last">Last name</label>
+            <input id="last" name="lastName" autocomplete="family-name" aria-describedby="last-help">
+            <p class="field__help" id="last-help">Optional</p>
+          </div>
+          <div class="field field--full">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err">
+            <p class="field__err" id="email-err" aria-live="polite"></p>
+          </div>
+          <div class="field field--full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required aria-describedby="message-help message-err"></textarea>
+            <p class="field__help" id="message-help">A launch, a pop-up, an ad budget, a video you keep meaning to make. A few lines is plenty.</p>
+            <p class="field__err" id="message-err" aria-live="polite"></p>
+          </div>
+          <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px">
+          <div class="form__foot">
+            <button class="btn btn--primary btn--lg" type="submit">Send message<i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></button>
+            <p class="form__status" data-status role="status"></p>
+          </div>
+        </form>
+
+        <aside class="aside reveal" style="--d:1" aria-label="Other ways to reach us">
+          <div class="aside__block">
+            <h2>Message us</h2>
+            <a href="https://www.instagram.com/inspirecampaigns/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>@inspirecampaigns</a>
+          </div>
+          <div class="aside__block">
+            <h2>The team</h2>
+            <a href="https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Javi Matos Rodriguez</a>
+            <a href="https://www.linkedin.com/in/anthony-hylton-604510202/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Ant Hylton</a>
+          </div>
+          <div class="aside__block">
+            <h2>Not sure what you need?</h2>
+            <p>That's normal. Tell us about the business and where you want it to be. We'll suggest the mix.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>

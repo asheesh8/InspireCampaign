@@ -1,0 +1,100 @@
+
+  <main id="main">
+    <header class="page-head" data-tone="blue">
+      <span class="art art--horse art--desk" aria-hidden="true" style="width:380px; --o:.08; top:40px"></span>
+      <div class="wrap page-head__inner">
+        <h1 class="h1 reveal">Made in <em>Vermont.</em></h1>
+        <p class="lede reveal" style="--d:1">We film where our clients work. Pick a place on the map to see what we made there.</p>
+      </div>
+    </header>
+
+    <section class="atlas" aria-label="Vermont map" data-tone="blue" data-atlas>
+      <div class="wrap atlas__inner">
+        <div class="atlas__map reveal">
+          <!--vmap:full-->
+          <div class="atlas__reset"><button class="btn btn--ghost" type="button" data-atlas-reset hidden><i class="ph ph-arrows-out" aria-hidden="true"></i>Whole state</button></div>
+        </div>
+        <div class="atlas__panel">
+          <div class="atlas__chips" role="group" aria-label="Places">
+            <button class="chip" type="button" aria-pressed="false" data-place-btn="burlington" data-tone="red">Burlington</button>
+            <button class="chip" type="button" aria-pressed="false" data-place-btn="winooski" data-tone="blue">Winooski</button>
+            <button class="chip" type="button" aria-pressed="false" data-place-btn="colchester" data-tone="yellow">Colchester</button>
+            <button class="chip" type="button" aria-pressed="false" data-place-btn="johnson" data-tone="red">Johnson</button>
+          </div>
+
+          <article class="place is-on" data-place="all" aria-live="polite">
+            <p class="place__county">Chittenden and Lamoille counties</p>
+            <h2 class="h2">Four towns, <em>one state.</em></h2>
+            <p>Our work so far clusters around Burlington, with a stop up Route 15 in Johnson. Pick a town, or click a pin, to zoom in.</p>
+          </article>
+
+          <article class="place" data-place="burlington">
+            <p class="place__county">Chittenden County</p>
+            <h2 class="h2">Burlington</h2>
+            <p>Where we filmed the Festival of Fools for the love of it, and home to The Johnson Health Center's Burlington clinic and the University of Vermont.</p>
+            <div class="place__work">
+              <a class="mini" href="/work/festival-of-fools.html"><img src="/assets/frames/festival-of-fools-2.webp" alt="" loading="lazy"><span>Festival of Fools</span></a>
+              <a class="mini" href="/work/jhc-better-vermont.html"><img src="/assets/posters/jhc-better-vermont.webp" alt="" loading="lazy"><span>A better Vermont</span></a>
+            </div>
+          </article>
+
+          <article class="place" data-place="winooski">
+            <p class="place__county">Chittenden County</p>
+            <h2 class="h2">Winooski</h2>
+            <p>Home of Prop Ready, the contractor behind our short-form series and office walk-through.</p>
+            <div class="place__work">
+              <a class="mini" href="/work/propready-estimate.html"><img src="/assets/posters/propready-estimate.webp" alt="" loading="lazy"><span>From estimate to end</span></a>
+              <a class="mini" href="/work/propready-walkthrough.html"><img src="/assets/posters/propready-walkthrough.webp" alt="" loading="lazy"><span>Prop Ready walk-through</span></a>
+            </div>
+          </article>
+
+          <article class="place" data-place="colchester">
+            <p class="place__county">Chittenden County</p>
+            <h2 class="h2">Colchester</h2>
+            <p>Where The Masters BNI meets every Thursday morning, and where Javi picked up the chapter's Notable Networker Award.</p>
+            <a class="btn btn--ghost" href="/about.html" style="justify-self:start">Meet the team<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="place" data-place="johnson">
+            <p class="place__county">Lamoille County</p>
+            <h2 class="h2">Johnson</h2>
+            <p>Where The Johnson Health Center started. Our motion graphic helped spread its harm-reduction message.</p>
+            <div class="place__work">
+              <a class="mini" href="/work/jhc-better-vermont.html"><img src="/assets/frames/jhc-better-vermont-2.webp" alt="" loading="lazy"><span>A better Vermont</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="statewide" aria-labelledby="sw-title">
+      <div class="wrap">
+        <h2 id="sw-title" class="h2 reveal">And all over <em>the state.</em></h2>
+        <div class="statewide__grid">
+          <a class="sw sw--a reveal" href="/work/mechayeh-product.html" style="text-decoration:none">
+            <i class="ph ph-cube" aria-hidden="true"></i>
+            <h3 class="h3">Mechayeh</h3>
+            <p>A Vermont craft brand that partners with cultivators across the state. We animated their product showcase.</p>
+          </a>
+          <a class="sw sw--b reveal" style="--d:1; text-decoration:none" href="/work/market-vendor.html">
+            <i class="ph ph-storefront" aria-hidden="true"></i>
+            <h3 class="h3">Pop-ups and farmers' markets</h3>
+            <p>Food vendors and pop-ups that move from town to town. We help them land the next spot.</p>
+          </a>
+          <div class="sw sw--c reveal" style="--d:2">
+            <i class="ph ph-graduation-cap" aria-hidden="true"></i>
+            <h3 class="h3">University of Vermont and Vermont State University</h3>
+            <p>Schools we've worked with, with campuses from Burlington to the Northeast Kingdom.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--waves:6-->
+    <section class="cta" aria-labelledby="cta-title" data-tone="red">
+      <div class="wrap cta__inner">
+        <h2 id="cta-title" class="cta__title reveal">Vermont brand? <em>Let's talk.</em></h2>
+        <a class="btn btn--primary btn--lg reveal" style="--d:1" href="/contact-us.html" data-hide-dock>Start a project<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </main>

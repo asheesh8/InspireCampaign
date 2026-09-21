@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Start a Project | Inspire Campaigns</title>
+  <meta name="description" content="Tell Inspire Campaigns what you&#x27;re working on: a launch, a pop-up, a campaign or a video you&#x27;ve been meaning to make.">
+  <meta property="og:title" content="Start a Project | Inspire Campaigns">
+  <meta property="og:description" content="Tell Inspire Campaigns what you&#x27;re working on: a launch, a pop-up, a campaign or a video you&#x27;ve been meaning to make.">
+  <meta property="og:image" content="/assets/posters/popup-food.webp">
+  <meta name="theme-color" content="#F3F1EC">
+  <script>
+    /* theme before first paint: saved choice, else the system's light or dark */
+    (function () {
+      var t = null; try { t = localStorage.getItem('ic-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark' && t !== 'pop') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css">
+  <link rel="stylesheet" href="/styles.css?v=5">
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Inspire Campaigns",
+   "description":"Video production, brand storytelling and paid advertising for Vermont businesses.",
+   "url":"https://www.inspirecampaigns.com/","areaServed":{"@type":"State","name":"Vermont"},
+   "founder":[{"@type":"Person","name":"Javi Matos Rodriguez"},{"@type":"Person","name":"Ant Hylton"}],
+   "sameAs":["https://www.instagram.com/inspirecampaigns/","https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/","https://www.linkedin.com/in/anthony-hylton-604510202/"]}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <span class="sentinel" data-top-sentinel aria-hidden="true"></span>
+
+  <header class="nav" data-nav>
+    <div class="nav__inner wrap">
+      <a href="/" class="mark" aria-label="Inspire Campaigns, home"><span class="mark__img" aria-hidden="true"></span></a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/our-work.html">Work</a>
+        <a href="/services.html">Services</a>
+        <a href="/vermont.html">Vermont</a>
+        <a href="/about.html">About</a>
+      </nav>
+      <div class="nav__actions">
+        <div class="modes" data-modes>
+          <button class="modes__btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="modes-menu" data-modes-btn>
+            <span class="modes__cur" data-modes-cur aria-hidden="true">&#9728;&#65039;</span><span class="sr-only">Change colour mode</span><i class="ph ph-caret-down" aria-hidden="true"></i>
+          </button>
+          <div class="modes__menu" id="modes-menu" role="menu" aria-label="Colour mode" hidden data-modes-menu>
+            <button type="button" role="menuitemradio" aria-checked="false" data-mode="light"><span class="modes__emoji" aria-hidden="true">&#9728;&#65039;</span>Light</button>
+            <button type="button" role="menuitemradio" aria-checked="false" data-mode="dark"><span class="modes__emoji" aria-hidden="true">&#127769;</span>Dark</button>
+            <button type="button" role="menuitemradio" aria-checked="false" data-mode="pop"><span class="modes__emoji" aria-hidden="true">&#127744;</span>Trippy</button>
+          </div>
+        </div>
+        <a class="btn btn--primary nav__cta" href="/contact-us.html">Start a project</a>
+        <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="sheet" aria-label="Open menu"><i class="ph ph-list" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </header>
+  <div class="sheet" id="sheet" data-sheet hidden data-lenis-prevent>
+    <span class="art art--sheet" aria-hidden="true"></span>
+    <a href="/our-work.html">Work</a>
+    <a href="/services.html">Services</a>
+    <a href="/vermont.html">Vermont</a>
+    <a href="/about.html">About</a>
+    <a class="btn btn--primary btn--lg" href="/contact-us.html">Start a project<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    <div class="sheet__meta">
+      <a class="link" href="https://www.instagram.com/inspirecampaigns/" target="_blank" rel="noopener">Instagram</a>
+      <span>Video and marketing for Vermont brands</span>
+    </div>
+  </div>
+
+  <main id="main">
+    <header class="page-head" data-tone="red">
+      <span class="art art--lamp art--desk" aria-hidden="true" style="width:300px; --o:.08"></span>
+      <div class="wrap page-head__inner">
+        <h1 class="h1 reveal">Let's <em>connect.</em></h1>
+        <p class="lede reveal" style="--d:1">Share your details and what you're working on. We'll reach out soon.</p>
+      </div>
+    </header>
+
+    <section class="contact" aria-label="Contact form">
+      <div class="wrap contact__inner">
+        <form class="form reveal" data-contact novalidate action="/api/contact" method="post">
+          <div class="field">
+            <label for="first">First name</label>
+            <input id="first" name="firstName" autocomplete="given-name" required aria-describedby="first-err">
+            <p class="field__err" id="first-err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="last">Last name</label>
+            <input id="last" name="lastName" autocomplete="family-name" aria-describedby="last-help">
+            <p class="field__help" id="last-help">Optional</p>
+          </div>
+          <div class="field field--full">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err">
+            <p class="field__err" id="email-err" aria-live="polite"></p>
+          </div>
+          <div class="field field--full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required aria-describedby="message-help message-err"></textarea>
+            <p class="field__help" id="message-help">A launch, a pop-up, an ad budget, a video you keep meaning to make. A few lines is plenty.</p>
+            <p class="field__err" id="message-err" aria-live="polite"></p>
+          </div>
+          <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px">
+          <div class="form__foot">
+            <button class="btn btn--primary btn--lg" type="submit">Send message<i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></button>
+            <p class="form__status" data-status role="status"></p>
+          </div>
+        </form>
+
+        <aside class="aside reveal" style="--d:1" aria-label="Other ways to reach us">
+          <div class="aside__block">
+            <h2>Message us</h2>
+            <a href="https://www.instagram.com/inspirecampaigns/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>@inspirecampaigns</a>
+          </div>
+          <div class="aside__block">
+            <h2>The team</h2>
+            <a href="https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Javi Matos Rodriguez</a>
+            <a href="https://www.linkedin.com/in/anthony-hylton-604510202/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Ant Hylton</a>
+          </div>
+          <div class="aside__block">
+            <h2>Not sure what you need?</h2>
+            <p>That's normal. Tell us about the business and where you want it to be. We'll suggest the mix.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot" data-hide-dock>
+    <span class="art art--foot" aria-hidden="true"></span>
+    <div class="wrap foot__inner">
+      <div class="foot__col foot__brand">
+        <a href="/" class="mark mark--foot" aria-label="Inspire Campaigns, home"><span class="mark__img" aria-hidden="true"></span></a>
+        <p>Video, social and paid ads for Vermont brands that are done blending in.</p>
+      </div>
+      <div class="foot__col">
+        <h2>Explore</h2>
+        <a href="/our-work.html">Work</a>
+        <a href="/services.html">Services</a>
+        <a href="/vermont.html">Vermont</a>
+        <a href="/about.html">About</a>
+        <a href="/contact-us.html">Start a project</a>
+      </div>
+      <div class="foot__col">
+        <h2>Connect</h2>
+        <a href="https://www.instagram.com/inspirecampaigns/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>Instagram</a>
+        <a href="https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Javi on LinkedIn</a>
+        <a href="https://www.linkedin.com/in/anthony-hylton-604510202/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Ant on LinkedIn</a>
+      </div>
+      <p class="foot__credit">&copy; 2026 Inspire Campaigns. Artwork: Eadweard Muybridge, <i>The Horse in Motion</i> (1878), and Thomas Edison's patent drawings for the electric lamp (1880) and Kinetoscope (1902), all public domain. Map: U.S. Census Bureau county boundaries.</p>
+    </div>
+  </footer>
+
+  <div class="dock" data-dock>
+    <a class="btn btn--primary dock__cta" href="/contact-us.html">Start a project<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+  </div>
+
+  <dialog class="player" data-player aria-label="Video player">
+    <div class="player__frame">
+      <video data-player-video controls playsinline preload="none"></video>
+    </div>
+    <div class="player__bar">
+      <p class="player__title" data-player-title></p>
+      <button class="player__close" type="button" data-player-close aria-label="Close video"><i class="ph ph-x" aria-hidden="true"></i></button>
+    </div>
+  </dialog>
+
+  <script src="/main.js?v=5" type="module"></script>
+</body>
+</html>

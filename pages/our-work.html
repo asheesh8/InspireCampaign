@@ -1,0 +1,52 @@
+
+  <main id="main">
+    <header class="page-head" data-tone="blue">
+      <span class="art art--kineto art--desk" aria-hidden="true" style="width:300px; --o:.08"></span>
+      <div class="wrap page-head__inner">
+        <h1 class="h1 reveal">Our <em>work.</em></h1>
+        <p class="lede reveal" style="--d:1">Motion graphics, short-form series and product videos for Vermont nonprofits, food pop-ups and local businesses. Open any project for the full story.</p>
+      </div>
+    </header>
+
+    <section class="showreel" aria-label="Showreel">
+      <div class="wrap reveal">
+        <button class="reel-card" type="button" data-play="/assets/video/showreel.mp4" data-title="Inspire Campaigns showreel" aria-label="Play the Inspire Campaigns showreel, 0:41">
+          <video src="/assets/video/showreel-preview.mp4" poster="/assets/posters/showreel.webp" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>
+          <span class="reel-card__label"><i class="ph-fill ph-play" aria-hidden="true"></i>Watch the showreel, 0:41</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="work" style="padding-top:0" aria-labelledby="all-title" data-tone="blue">
+      <div class="wrap">
+        <h2 id="all-title" class="sr-only">All projects</h2>
+        <div class="filters" role="group" aria-label="Filter projects" data-filters>
+          <button class="chip" type="button" aria-pressed="true" data-filter="all">All</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="local" data-tone="blue">Local business</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="food" data-tone="yellow">Food and drink</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="nonprofit" data-tone="red">Nonprofit</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="community" data-tone="red">Community</button>
+        </div>
+        <div class="gallery" data-gallery>
+          <!--tile:jhc-better-vermont::note-->
+          <!--tile:festival-of-fools::note-->
+          <!--tile:propready-estimate::note-->
+          <!--tile:popup-food::note-->
+          <!--tile:mechayeh-product::note-->
+          <!--tile:propready-walkthrough::note-->
+          <!--tile:market-vendor::note-->
+          <!--tile:popup-drinks::note-->
+        </div>
+        <p class="gallery__empty" data-empty hidden>Nothing in that category yet.</p>
+      </div>
+    </section>
+
+    <!--waves:5-->
+    <section class="cta" aria-labelledby="cta-title" data-tone="red">
+      <span class="art art--lamp art--desk" aria-hidden="true"></span>
+      <div class="wrap cta__inner">
+        <h2 id="cta-title" class="cta__title reveal">Your brand <em>could be next.</em></h2>
+        <a class="btn btn--primary btn--lg reveal" style="--d:1" href="/contact-us.html" data-hide-dock>Start a project<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </main>
