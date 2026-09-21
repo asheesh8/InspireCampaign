@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>About | Inspire Campaigns</title>
-  <meta name="description" content="Javi Matos Rodriguez and Ant Hylton: a creative and a strategist, friends for over a decade, building brands in Vermont.">
+  <meta name="description" content="Meet Javi Matos Rodriguez, founder and creative lead of Inspire Campaigns: strategy, storytelling and video for Vermont brands.">
   <meta property="og:title" content="About | Inspire Campaigns">
-  <meta property="og:description" content="Javi Matos Rodriguez and Ant Hylton: a creative and a strategist, friends for over a decade, building brands in Vermont.">
+  <meta property="og:description" content="Meet Javi Matos Rodriguez, founder and creative lead of Inspire Campaigns: strategy, storytelling and video for Vermont brands.">
   <meta property="og:image" content="/assets/posters/popup-food.webp">
-  <meta name="theme-color" content="#F3F1EC">
+  <meta name="theme-color" content="#0F2A3F">
   <script>
-    /* theme before first paint: saved choice, else the system's light or dark */
+    /* theme before first paint: the visitor's saved choice, else Trippy (pop) */
     (function () {
-      var t = null; try { t = localStorage.getItem('ic-theme'); } catch (e) {}
-      if (t !== 'light' && t !== 'dark' && t !== 'pop') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var t = null; try { t = localStorage.getItem('ic-mode'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark' && t !== 'pop') t = 'pop';
       document.documentElement.dataset.theme = t;
       document.documentElement.classList.add('js');
     })();
@@ -25,14 +25,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css">
-  <link rel="stylesheet" href="/styles.css?v=6">
+  <link rel="stylesheet" href="/styles.css?v=7">
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"Inspire Campaigns",
    "description":"Video production, brand storytelling and paid advertising for Vermont businesses.",
    "url":"https://www.inspirecampaigns.com/","areaServed":{"@type":"State","name":"Vermont"},
-   "founder":[{"@type":"Person","name":"Javi Matos Rodriguez"},{"@type":"Person","name":"Ant Hylton"}],
-   "sameAs":["https://www.instagram.com/inspirecampaigns/","https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/","https://www.linkedin.com/in/anthony-hylton-604510202/"]}
+   "founder":{"@type":"Person","name":"Javi Matos Rodriguez"},
+   "sameAs":["https://www.instagram.com/inspirecampaigns/","https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/"]}
   </script>
 </head>
 <body>
@@ -88,7 +88,7 @@
     <section class="about-story" aria-label="Our story">
       <div class="wrap about-story__inner">
         <div class="about-story__text reveal">
-          <p>Inspire Campaigns brings <strong>strategic marketing</strong> and <strong>hands-on production</strong> together in one small team, so the person planning your campaign is talking to the person holding the camera.</p>
+          <p>Inspire Campaigns brings <strong>strategic marketing</strong> and <strong>hands-on production</strong> together under one roof, so the people planning your campaign are the people holding the camera.</p>
           <p>We pair data-driven strategy with authentic stories and well-made video to move your audience from awareness to action. Then we make it for the screens your audience uses most.</p>
           <p>Our clients range from The Johnson Health Center and Prop Ready to food pop-ups, farmers' market vendors and local product brands.</p>
         </div>
@@ -98,26 +98,16 @@
 
     <section class="duo" style="padding-top:0" aria-labelledby="duo-title" data-tone="red">
       <div class="wrap">
-        <div class="duo__head">
-          <h2 id="duo-title" class="h2 reveal">Two friends. <em>One creative, one strategist.</em></h2>
-          <p class="lede reveal" style="--d:1">Friends for over a decade. Javi brings the creativity, flair and vision. Ant brings the strategy, tactics and insight.</p>
-        </div>
-        <div class="duo__grid">
-          <article class="person person--a reveal">
-            <div class="person__photo"><img src="/assets/photos/javi.webp" width="800" height="1000" loading="lazy" alt="Javi Matos Rodriguez in a black shirt against a dark backdrop."></div>
-            <p class="person__role">Founder and creative lead</p>
-            <h3 class="h3">Javi Matos Rodriguez</h3>
-            <p>Javi comes from videography, audio and music production, with roots in the Bronx that shape his instinct for honest storytelling. He works with teams to make content that connects at every stage of the funnel. Off the clock, he's listening to or making music.</p>
-            <div class="person__links"><a class="link" href="https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/" target="_blank" rel="noopener">LinkedIn</a></div>
-          </article>
-          <article class="person person--b reveal" style="--d:1">
-            <div class="person__photo"><img src="/assets/photos/ant.webp" width="800" height="1000" loading="lazy" alt="Ant Hylton smiling on a covered porch."></div>
-            <p class="person__role">Co-founder and marketing strategist</p>
-            <h3 class="h3">Ant Hylton</h3>
-            <p>Ant works across paid advertising, AI, search and performance marketing. He builds strategies that drive growth from acquisition to retention. Off the clock, he runs marathons.</p>
-            <div class="person__links"><a class="link" href="https://www.linkedin.com/in/anthony-hylton-604510202/" target="_blank" rel="noopener">LinkedIn</a></div>
-          </article>
-        </div>
+        <article class="person person--solo">
+          <div class="person__photo reveal"><img src="/assets/photos/javi.webp" width="800" height="1000" loading="lazy" alt="Javi Matos Rodriguez in a black shirt against a dark backdrop."></div>
+          <div class="person__body">
+            <p class="person__role reveal">Founder and creative lead</p>
+            <h2 id="duo-title" class="h2 reveal">Meet <em>Javi.</em></h2>
+            <p class="reveal" style="--d:1">Javi Matos Rodriguez comes from videography, audio and music production, with roots in the Bronx that shape his instinct for honest storytelling. He brings the creativity, flair and vision, and works with teams to make content that connects at every stage of the funnel.</p>
+            <p class="reveal" style="--d:1">Off the clock, he's listening to or making music.</p>
+            <div class="person__links reveal" style="--d:2"><a class="btn btn--ghost" href="https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Javi on LinkedIn</a></div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -174,7 +164,6 @@
         <h2>Connect</h2>
         <a href="https://www.instagram.com/inspirecampaigns/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>Instagram</a>
         <a href="https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Javi on LinkedIn</a>
-        <a href="https://www.linkedin.com/in/anthony-hylton-604510202/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Ant on LinkedIn</a>
       </div>
       <p class="foot__credit">&copy; 2026 Inspire Campaigns. Artwork: Eadweard Muybridge, <i>The Horse in Motion</i> (1878), and Thomas Edison's patent drawings for the electric lamp (1880) and Kinetoscope (1902), all public domain. Map: U.S. Census Bureau county boundaries.</p>
     </div>
@@ -194,6 +183,6 @@
     </div>
   </dialog>
 
-  <script src="/main.js?v=6" type="module"></script>
+  <script src="/main.js?v=7" type="module"></script>
 </body>
 </html>

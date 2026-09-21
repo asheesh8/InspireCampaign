@@ -18,11 +18,10 @@ from pathlib import Path
 from waves import waves
 
 ROOT = Path(__file__).resolve().parent.parent
-V = "6"  # bump to bust caches after CSS/JS edits
+V = "7"  # bump to bust caches after CSS/JS edits
 CONTACT = "/contact-us.html"
 IG = "https://www.instagram.com/inspirecampaigns/"
 LI_JAVI = "https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/"
-LI_ANT = "https://www.linkedin.com/in/anthony-hylton-604510202/"
 
 # ---------------------------------------------------------------- portfolio
 # Order follows the old /our-work page. Goals and results are the client's own statements from that page;
@@ -142,12 +141,12 @@ HEAD = """<!doctype html>
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{desc}">
   <meta property="og:image" content="/assets/posters/{og}.webp">
-  <meta name="theme-color" content="#F3F1EC">
+  <meta name="theme-color" content="#0F2A3F">
   <script>
-    /* theme before first paint: saved choice, else the system's light or dark */
+    /* theme before first paint: the visitor's saved choice, else Trippy (pop) */
     (function () {{
-      var t = null; try {{ t = localStorage.getItem('ic-theme'); }} catch (e) {{}}
-      if (t !== 'light' && t !== 'dark' && t !== 'pop') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var t = null; try {{ t = localStorage.getItem('ic-mode'); }} catch (e) {{}}
+      if (t !== 'light' && t !== 'dark' && t !== 'pop') t = 'pop';
       document.documentElement.dataset.theme = t;
       document.documentElement.classList.add('js');
     }})();
@@ -165,8 +164,8 @@ HEAD = """<!doctype html>
   {{"@context":"https://schema.org","@type":"ProfessionalService","name":"Inspire Campaigns",
    "description":"Video production, brand storytelling and paid advertising for Vermont businesses.",
    "url":"https://www.inspirecampaigns.com/","areaServed":{{"@type":"State","name":"Vermont"}},
-   "founder":[{{"@type":"Person","name":"Javi Matos Rodriguez"}},{{"@type":"Person","name":"Ant Hylton"}}],
-   "sameAs":["{ig}","{li_javi}","{li_ant}"]}}
+   "founder":{{"@type":"Person","name":"Javi Matos Rodriguez"}},
+   "sameAs":["{ig}","{li_javi}"]}}
   </script>
 </head>
 <body>
@@ -239,7 +238,6 @@ FOOTER = f"""
         <h2>Connect</h2>
         <a href="{IG}" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>Instagram</a>
         <a href="{LI_JAVI}" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Javi on LinkedIn</a>
-        <a href="{LI_ANT}" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Ant on LinkedIn</a>
       </div>
       <p class="foot__credit">&copy; 2026 Inspire Campaigns. Artwork: Eadweard Muybridge, <i>The Horse in Motion</i> (1878), and Thomas Edison's patent drawings for the electric lamp (1880) and Kinetoscope (1902), all public domain. Map: U.S. Census Bureau county boundaries.</p>
     </div>
@@ -386,7 +384,7 @@ PAGES = [
     ("vermont.html", "vermont", "Made in Vermont | Inspire Campaigns",
      "Where Inspire Campaigns has filmed and worked across Vermont: Burlington, Winooski, Colchester and Johnson."),
     ("about.html", "about", "About | Inspire Campaigns",
-     "Javi Matos Rodriguez and Ant Hylton: a creative and a strategist, friends for over a decade, building brands in Vermont."),
+     "Meet Javi Matos Rodriguez, founder and creative lead of Inspire Campaigns: strategy, storytelling and video for Vermont brands."),
     ("contact-us.html", "contact", "Start a Project | Inspire Campaigns",
      "Tell Inspire Campaigns what you're working on: a launch, a pop-up, a campaign or a video you've been meaning to make."),
 ]
@@ -404,7 +402,7 @@ def expand(body):
 
 def render(title, desc, key, body, og="popup-food", preload=""):
     return (HEAD.format(title=escape(title, quote=True), desc=escape(desc, quote=True), og=og, preload=preload,
-                        v=V, ig=IG, li_javi=LI_JAVI, li_ant=LI_ANT)
+                        v=V, ig=IG, li_javi=LI_JAVI)
             + header(key) + expand(body) + FOOTER)
 
 

@@ -26,7 +26,7 @@ const syncModeUI = () => {
 };
 const setTheme = (t, from) => {
   if (!MODES[t] || t === root.dataset.theme) return;
-  try { localStorage.setItem('ic-theme', t); } catch {}
+  try { localStorage.setItem('ic-mode', t); } catch {}
   const apply = () => { root.dataset.theme = t; syncModeUI(); syncSmooth(); };
   if (!document.startViewTransition || reduceMotion) return apply();
   if (from) {
