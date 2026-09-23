@@ -42,18 +42,56 @@ export default async function handler(req, res) {
   </table>
 </div>`;
   const text = `New enquiry from inspirecampaigns.com\n\n${name}\n${email}\n\n${message}\n\nReply to this email to answer ${firstName} directly.\nSent ${when} ET from the contact form.`;
-  const r = await fetch('https://api.resend.com/emails', {
+  const send = (payload) => fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      from: CONTACT_FROM,
-      to: CONTACT_TO.split(',').map((s) => s.trim()),
-      reply_to: email,
-      subject: `New project enquiry: ${name}`,
-      html,
-      text,
-    }),
+    body: JSON.stringify(payload),
+  });
+
+  const r = await send({
+    from: CONTACT_FROM,
+    to: CONTACT_TO.split(',').map((s) => s.trim()),
+    reply_to: email,
+    subject: `New project enquiry: ${name}`,
+    html,
+    text,
   });
   if (!r.ok) return res.status(502).json({ error: 'Email failed' });
+
+  // Acknowledge the visitor so they know it arrived. Replies go to the studio inbox,
+  // not to the send-only address. A failure here must not fail their submission.
+  const inbox = CONTACT_TO.split(',')[0].trim();
+  const ack = `<div style="margin:0;padding:24px;background:#0F2A3F;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;margin:0 auto;background:#FFFFFF;border-radius:14px;overflow:hidden">
+    <tr><td style="height:6px;background:#FFB81F;font-size:0;line-height:0">&nbsp;</td></tr>
+    <tr><td style="padding:28px 28px 4px">
+      <h1 style="margin:0;font-size:24px;line-height:1.25;color:#10161C">Thanks, ${esc(firstName)}. We've got it.</h1>
+      <p style="margin:12px 0 0;font-size:16px;line-height:1.55;color:#48525C">Your message reached Inspire Campaigns and a real person will read it. Expect a reply from Javi soon.</p>
+    </td></tr>
+    <tr><td style="padding:20px 28px 0">
+      <p style="margin:0 0 8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#7A8794">What you sent</p>
+      <div style="background:#F4F6F8;border-radius:10px;padding:18px 20px">
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#10161C;white-space:pre-wrap">${esc(message)}</p>
+      </div>
+    </td></tr>
+    <tr><td style="padding:22px 28px 28px">
+      <a href="https://inspirecampaigns.com/our-work" style="display:inline-block;background:#FFB81F;color:#10161C;font-weight:600;font-size:15px;text-decoration:none;padding:12px 22px;border-radius:999px">See the work</a>
+      <p style="margin:18px 0 0;font-size:13px;line-height:1.5;color:#8A949E">Need to add something? Just reply to this email. Inspire Campaigns, Vermont.</p>
+    </td></tr>
+  </table>
+</div>`;
+  const ackText = `Thanks, ${firstName}. We've got it.\n\nYour message reached Inspire Campaigns and a real person will read it. Expect a reply from Javi soon.\n\nWhat you sent:\n${message}\n\nNeed to add something? Just reply to this email.\nSee the work: https://inspirecampaigns.com/our-work\nInspire Campaigns, Vermont.`;
+  try {
+    await send({
+      from: CONTACT_FROM,
+      to: [email],
+      reply_to: inbox,
+      subject: 'Thanks for reaching out to Inspire Campaigns',
+      html: ack,
+      text: ackText,
+    });
+  } catch {
+    // the enquiry is already delivered; the visitor still sees the on-page confirmation
+  }
   return res.status(200).json({ ok: true });
 }
