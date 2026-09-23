@@ -12,7 +12,7 @@ Site for Inspire Campaigns, a Vermont video and marketing studio (founder: Javi 
 - **Vermont map:** county outlines are U.S. Census TIGERweb data shared with the Elite Real Estate Partners build (`data/vermont.json`). Pins are projected from USGS town coordinates: Burlington, Winooski (Prop Ready), Colchester (The Masters BNI) and Johnson (The Johnson Health Center).
 - **Artwork:** `scripts/waves.py` draws the pop-art wave bands as inline SVG coloured by CSS variables. `assets/art/` holds public-domain Muybridge and Edison drawings cut by the agency's `research/cut-art.py`, used as CSS masks.
 - Videos in `assets/video/` are re-encoded from the client's Wix uploads, and case-study stills are cut from them. The encoding scripts and source files live in the agency's project folder (`research/`), not in this repo.
-- `api/contact.js` sends form submissions through Resend. Set `RESEND_API_KEY`, `CONTACT_TO` and `CONTACT_FROM` in Vercel.
+- `api/contact.js` sends form submissions through Resend. `RESEND_API_KEY`, `CONTACT_TO` (javier@inspirecampaigns.com) and `CONTACT_FROM` (site@inspirecampaigns.com) are set in the Vercel project; `inspirecampaigns.com` is a verified sending domain in Resend, on the `send`/`rsend` subdomains so the Outlook MX records at the root are untouched.
 
 ## Local preview
 
@@ -24,4 +24,4 @@ python3 -m http.server 5179
 
 ## Before launch
 
-Search the code for `TODO(owner)`. Open items: which inbox receives leads, permission to show the UVM and Vermont State logos, confirm the BNI award date (June 2026), confirm client names for the unnamed food pop-up (its logo reads BREW) and market vendor, confirm Prop Ready's Winooski location for the map, and higher-resolution originals of the Mechayeh and market-vendor videos (only 480p was on Wix).
+Live at https://inspirecampaigns.com (Vercel project `inspire-campaign`, auto-deploys from `main`; `www` redirects to the apex). Search the code for `TODO(owner)`. Open items: permission to show the UVM and Vermont State logos, confirm the BNI award date (June 2026), confirm client names for the unnamed food pop-up (its logo reads BREW) and market vendor, confirm Prop Ready's Winooski location for the map, and higher-resolution originals of the Mechayeh and market-vendor videos (only 480p was on Wix).

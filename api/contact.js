@@ -1,7 +1,6 @@
 // Vercel function for the contact form. Sends the message by email through Resend.
 // Env vars (set in Vercel): RESEND_API_KEY, CONTACT_TO (the inbox that receives leads),
 // CONTACT_FROM (a sender on a domain verified in Resend, e.g. "Inspire Campaigns <site@inspirecampaigns.com>").
-// TODO(owner): confirm which inbox should receive website leads.
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const clean = (v, max) => String(v ?? '').trim().slice(0, max);
 const esc = (s) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
