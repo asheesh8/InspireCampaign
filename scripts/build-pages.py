@@ -18,7 +18,7 @@ from pathlib import Path
 from waves import waves
 
 ROOT = Path(__file__).resolve().parent.parent
-V = "9"  # bump to bust caches after CSS/JS edits
+V = "10"  # bump to bust caches after CSS/JS edits
 CONTACT = "/contact-us.html"
 IG = "https://www.instagram.com/inspirecampaigns/"
 LI_JAVI = "https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/"
@@ -130,6 +130,33 @@ def vmap(kind="full"):
             f'<g class="vmap__pins" aria-hidden="true">{pins}</g></svg>')
 
 
+
+# ---------------------------------------------------------------- icons
+# Phosphor icons (MIT) as an inline sprite: no icon webfont, no third-party request.
+ICONS = json.loads((ROOT / "data" / "icons.json").read_text())
+ICON_RE = re.compile(r'<i class="ph(-fill)? ph-([a-z0-9-]+)"([^>]*)></i>')
+
+
+def icons_in(html):
+    """Replace icon <i> tags with sprite references; return the html and the symbols it needs."""
+    used = []
+
+    def sub(m):
+        name = "i-" + m[2] + ("-fill" if m[1] else "")
+        if name not in ICONS:
+            return m[0]
+        used.append(name)
+        return f'<i class="ic"{m[3]}><svg viewBox="0 0 256 256"><use href="#{name}"/></svg></i>'
+
+    return ICON_RE.sub(sub, html), used
+
+
+def sprite(used):
+    if not used:
+        return ""
+    syms = "".join(f'<symbol id="{n}" viewBox="0 0 256 256">{ICONS[n]}</symbol>' for n in dict.fromkeys(used))
+    return f'<svg class="sprite" aria-hidden="true" width="0" height="0">{syms}</svg>\n'
+
 # ---------------------------------------------------------------- partials
 HEAD = """<!doctype html>
 <html lang="en">
@@ -155,10 +182,7 @@ HEAD = """<!doctype html>
   <link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
   {preload}<link rel="stylesheet" href="/styles.min.css?v={v}">
-  <!-- icons paint after the text does, so their stylesheets never block the first render -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"></noscript>
+
   <script type="application/ld+json">
   {{"@context":"https://schema.org","@type":"ProfessionalService","name":"Inspire Campaigns",
    "description":"Video production, brand storytelling and paid advertising for Vermont businesses.",
@@ -400,9 +424,11 @@ def expand(body):
 
 
 def render(title, desc, key, body, og="popup-food", preload=""):
-    return (HEAD.format(title=escape(title, quote=True), desc=escape(desc, quote=True), og=og, preload=preload,
+    page = (HEAD.format(title=escape(title, quote=True), desc=escape(desc, quote=True), og=og, preload=preload,
                         v=V, ig=IG, li_javi=LI_JAVI)
             + header(key) + expand(body) + FOOTER)
+    page, used = icons_in(page)
+    return page.replace("<body>\n", "<body>\n  " + sprite(used), 1)
 
 
 def minify_css(css):

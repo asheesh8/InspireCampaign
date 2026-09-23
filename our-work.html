@@ -21,11 +21,8 @@
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.min.css?v=9">
-  <!-- icons paint after the text does, so their stylesheets never block the first render -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"></noscript>
+  <link rel="stylesheet" href="/styles.min.css?v=10">
+
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"Inspire Campaigns",
    "description":"Video production, brand storytelling and paid advertising for Vermont businesses.",
@@ -35,6 +32,7 @@
   </script>
 </head>
 <body>
+  <svg class="sprite" aria-hidden="true" width="0" height="0"><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-play-fill" viewBox="0 0 256 256"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></symbol><symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></symbol><symbol id="i-linkedin-logo" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></svg>
   <a class="skip" href="#main">Skip to content</a>
   <span class="sentinel" data-top-sentinel aria-hidden="true"></span>
 
@@ -50,7 +48,7 @@
       <div class="nav__actions">
         <div class="modes" data-modes>
           <button class="modes__btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="modes-menu" data-modes-btn>
-            <span class="modes__cur" data-modes-cur aria-hidden="true">&#9728;&#65039;</span><span class="sr-only">Change colour mode</span><i class="ph ph-caret-down" aria-hidden="true"></i>
+            <span class="modes__cur" data-modes-cur aria-hidden="true">&#9728;&#65039;</span><span class="sr-only">Change colour mode</span><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-caret-down"/></svg></i>
           </button>
           <div class="modes__menu" id="modes-menu" role="menu" aria-label="Colour mode" hidden data-modes-menu>
             <button type="button" role="menuitemradio" aria-checked="false" data-mode="light"><span class="modes__emoji" aria-hidden="true">&#9728;&#65039;</span>Light</button>
@@ -59,7 +57,7 @@
           </div>
         </div>
         <a class="btn btn--primary nav__cta" href="/contact-us.html">Start a project</a>
-        <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="sheet" aria-label="Open menu"><i class="ph ph-list" aria-hidden="true"></i></button>
+        <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="sheet" aria-label="Open menu"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-list"/></svg></i></button>
       </div>
     </div>
   </header>
@@ -69,7 +67,7 @@
     <a href="/services.html">Services</a>
     <a href="/vermont.html">Vermont</a>
     <a href="/about.html">About</a>
-    <a class="btn btn--primary btn--lg" href="/contact-us.html">Start a project<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    <a class="btn btn--primary btn--lg" href="/contact-us.html">Start a project<i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-arrow-right"/></svg></i></a>
     <div class="sheet__meta">
       <a class="link" href="https://www.instagram.com/inspirecampaigns/" target="_blank" rel="noopener">Instagram</a>
       <span>Video and marketing for Vermont brands</span>
@@ -89,7 +87,7 @@
       <div class="wrap reveal">
         <button class="reel-card" type="button" data-play="/assets/video/showreel.mp4" data-title="Inspire Campaigns showreel" aria-label="Play the Inspire Campaigns showreel, 0:41">
           <video data-src="/assets/video/showreel-preview.mp4" poster="/assets/posters/showreel.webp" muted loop playsinline data-autoplay preload="none" aria-hidden="true"></video>
-          <span class="reel-card__label"><i class="ph-fill ph-play" aria-hidden="true"></i>Watch the showreel, 0:41</span>
+          <span class="reel-card__label"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-play-fill"/></svg></i>Watch the showreel, 0:41</span>
         </button>
       </div>
     </section>
@@ -110,7 +108,7 @@
       <img src="/assets/posters/festival-of-fools.webp" width="768" height="345" alt="A street performer in front of a packed crowd on a Burlington street." loading="lazy">
       <video data-src="/assets/video/festival-of-fools-preview.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       <a class="tile__link" href="/work/festival-of-fools.html" tabindex="-1" aria-hidden="true"></a>
-      <button class="tile__play" type="button" data-play="/assets/video/festival-of-fools.mp4" data-title="Festival of Fools, Burlington community" aria-label="Play Festival of Fools, 0:40"><i class="ph-fill ph-play" aria-hidden="true"></i>0:40</button>
+      <button class="tile__play" type="button" data-play="/assets/video/festival-of-fools.mp4" data-title="Festival of Fools, Burlington community" aria-label="Play Festival of Fools, 0:40"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-play-fill"/></svg></i>0:40</button>
     </div>
     <div class="tile__meta">
       <h3 class="h3"><a href="/work/festival-of-fools.html">Festival of Fools</a></h3>
@@ -123,7 +121,7 @@
       <img src="/assets/posters/jhc-better-vermont.webp" width="432" height="768" alt="Motion graphic of five figures, one in red, above the word Vermont." loading="lazy">
       <video data-src="/assets/video/jhc-better-vermont-preview.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       <a class="tile__link" href="/work/jhc-better-vermont.html" tabindex="-1" aria-hidden="true"></a>
-      <button class="tile__play" type="button" data-play="/assets/video/jhc-better-vermont.mp4" data-title="A better Vermont, The Johnson Health Center" data-tall aria-label="Play A better Vermont, 1:17"><i class="ph-fill ph-play" aria-hidden="true"></i>1:17</button>
+      <button class="tile__play" type="button" data-play="/assets/video/jhc-better-vermont.mp4" data-title="A better Vermont, The Johnson Health Center" data-tall aria-label="Play A better Vermont, 1:17"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-play-fill"/></svg></i>1:17</button>
     </div>
     <div class="tile__meta">
       <h3 class="h3"><a href="/work/jhc-better-vermont.html">A better Vermont</a></h3>
@@ -136,7 +134,7 @@
       <img src="/assets/posters/propready-estimate.webp" width="432" height="768" alt="Prop Ready team member speaking to camera in the company workshop." loading="lazy">
       <video data-src="/assets/video/propready-estimate-preview.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       <a class="tile__link" href="/work/propready-estimate.html" tabindex="-1" aria-hidden="true"></a>
-      <button class="tile__play" type="button" data-play="/assets/video/propready-estimate.mp4" data-title="From estimate to end, Prop Ready" data-tall aria-label="Play From estimate to end, 0:22"><i class="ph-fill ph-play" aria-hidden="true"></i>0:22</button>
+      <button class="tile__play" type="button" data-play="/assets/video/propready-estimate.mp4" data-title="From estimate to end, Prop Ready" data-tall aria-label="Play From estimate to end, 0:22"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-play-fill"/></svg></i>0:22</button>
     </div>
     <div class="tile__meta">
       <h3 class="h3"><a href="/work/propready-estimate.html">From estimate to end</a></h3>
@@ -149,7 +147,7 @@
       <img src="/assets/posters/popup-food.webp" width="432" height="768" alt="Whipped cream piped onto a fried chicken and waffle." loading="lazy">
       <video data-src="/assets/video/popup-food-preview.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       <a class="tile__link" href="/work/popup-food.html" tabindex="-1" aria-hidden="true"></a>
-      <button class="tile__play" type="button" data-play="/assets/video/popup-food.mp4" data-title="Food showcase, Local food pop-up" data-tall aria-label="Play Food showcase, 0:21"><i class="ph-fill ph-play" aria-hidden="true"></i>0:21</button>
+      <button class="tile__play" type="button" data-play="/assets/video/popup-food.mp4" data-title="Food showcase, Local food pop-up" data-tall aria-label="Play Food showcase, 0:21"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-play-fill"/></svg></i>0:21</button>
     </div>
     <div class="tile__meta">
       <h3 class="h3"><a href="/work/popup-food.html">Food showcase</a></h3>
@@ -162,7 +160,7 @@
       <img src="/assets/posters/mechayeh-product.webp" width="432" height="768" alt="Animated product frame reading Pure Gasss on a dark background." loading="lazy">
       <video data-src="/assets/video/mechayeh-product-preview.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       <a class="tile__link" href="/work/mechayeh-product.html" tabindex="-1" aria-hidden="true"></a>
-      <button class="tile__play" type="button" data-play="/assets/video/mechayeh-product.mp4" data-title="Product showcase, Mechayeh" data-tall aria-label="Play Product showcase, 0:18"><i class="ph-fill ph-play" aria-hidden="true"></i>0:18</button>
+      <button class="tile__play" type="button" data-play="/assets/video/mechayeh-product.mp4" data-title="Product showcase, Mechayeh" data-tall aria-label="Play Product showcase, 0:18"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-play-fill"/></svg></i>0:18</button>
     </div>
     <div class="tile__meta">
       <h3 class="h3"><a href="/work/mechayeh-product.html">Product showcase</a></h3>
@@ -175,7 +173,7 @@
       <img src="/assets/posters/propready-walkthrough.webp" width="432" height="768" alt="A Prop Ready carpenter cutting a board on a miter saw." loading="lazy">
       <video data-src="/assets/video/propready-walkthrough-preview.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       <a class="tile__link" href="/work/propready-walkthrough.html" tabindex="-1" aria-hidden="true"></a>
-      <button class="tile__play" type="button" data-play="/assets/video/propready-walkthrough.mp4" data-title="Prop Ready walk-through, Prop Ready" data-tall aria-label="Play Prop Ready walk-through, 0:20"><i class="ph-fill ph-play" aria-hidden="true"></i>0:20</button>
+      <button class="tile__play" type="button" data-play="/assets/video/propready-walkthrough.mp4" data-title="Prop Ready walk-through, Prop Ready" data-tall aria-label="Play Prop Ready walk-through, 0:20"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-play-fill"/></svg></i>0:20</button>
     </div>
     <div class="tile__meta">
       <h3 class="h3"><a href="/work/propready-walkthrough.html">Prop Ready walk-through</a></h3>
@@ -188,7 +186,7 @@
       <img src="/assets/posters/market-vendor.webp" width="432" height="768" alt="A burger on a griddle at a market stall, with a yellow caption across the top." loading="lazy">
       <video data-src="/assets/video/market-vendor-preview.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       <a class="tile__link" href="/work/market-vendor.html" tabindex="-1" aria-hidden="true"></a>
-      <button class="tile__play" type="button" data-play="/assets/video/market-vendor.mp4" data-title="Farmers' market vendor, Local food vendor" data-tall aria-label="Play Farmers' market vendor, 0:17"><i class="ph-fill ph-play" aria-hidden="true"></i>0:17</button>
+      <button class="tile__play" type="button" data-play="/assets/video/market-vendor.mp4" data-title="Farmers' market vendor, Local food vendor" data-tall aria-label="Play Farmers' market vendor, 0:17"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-play-fill"/></svg></i>0:17</button>
     </div>
     <div class="tile__meta">
       <h3 class="h3"><a href="/work/market-vendor.html">Farmers' market vendor</a></h3>
@@ -201,7 +199,7 @@
       <img src="/assets/posters/popup-drinks.webp" width="432" height="768" alt="Whipped cream piped onto an iced coffee." loading="lazy">
       <video data-src="/assets/video/popup-drinks-preview.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       <a class="tile__link" href="/work/popup-drinks.html" tabindex="-1" aria-hidden="true"></a>
-      <button class="tile__play" type="button" data-play="/assets/video/popup-drinks.mp4" data-title="Brand showcase, Local food pop-up" data-tall aria-label="Play Brand showcase, 0:15"><i class="ph-fill ph-play" aria-hidden="true"></i>0:15</button>
+      <button class="tile__play" type="button" data-play="/assets/video/popup-drinks.mp4" data-title="Brand showcase, Local food pop-up" data-tall aria-label="Play Brand showcase, 0:15"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-play-fill"/></svg></i>0:15</button>
     </div>
     <div class="tile__meta">
       <h3 class="h3"><a href="/work/popup-drinks.html">Brand showcase</a></h3>
@@ -219,7 +217,7 @@
       <span class="art art--lamp art--desk" aria-hidden="true"></span>
       <div class="wrap cta__inner">
         <h2 id="cta-title" class="cta__title reveal">Your brand <em>could be next.</em></h2>
-        <a class="btn btn--primary btn--lg reveal" style="--d:1" href="/contact-us.html" data-hide-dock>Start a project<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        <a class="btn btn--primary btn--lg reveal" style="--d:1" href="/contact-us.html" data-hide-dock>Start a project<i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-arrow-right"/></svg></i></a>
       </div>
     </section>
   </main>
@@ -241,15 +239,15 @@
       </div>
       <div class="foot__col">
         <h2>Connect</h2>
-        <a href="https://www.instagram.com/inspirecampaigns/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>Instagram</a>
-        <a href="https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Javi on LinkedIn</a>
+        <a href="https://www.instagram.com/inspirecampaigns/" target="_blank" rel="noopener"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-instagram-logo"/></svg></i>Instagram</a>
+        <a href="https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/" target="_blank" rel="noopener"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-linkedin-logo"/></svg></i>Javi on LinkedIn</a>
       </div>
       <p class="foot__credit">&copy; 2026 Inspire Campaigns. Artwork: Eadweard Muybridge, <i>The Horse in Motion</i> (1878), and Thomas Edison's patent drawings for the electric lamp (1880) and Kinetoscope (1902), all public domain. Map: U.S. Census Bureau county boundaries.</p>
     </div>
   </footer>
 
   <div class="dock" data-dock>
-    <a class="btn btn--primary dock__cta" href="/contact-us.html">Start a project<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    <a class="btn btn--primary dock__cta" href="/contact-us.html">Start a project<i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-arrow-right"/></svg></i></a>
   </div>
 
   <dialog class="player" data-player aria-label="Video player">
@@ -258,10 +256,10 @@
     </div>
     <div class="player__bar">
       <p class="player__title" data-player-title></p>
-      <button class="player__close" type="button" data-player-close aria-label="Close video"><i class="ph ph-x" aria-hidden="true"></i></button>
+      <button class="player__close" type="button" data-player-close aria-label="Close video"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-x"/></svg></i></button>
     </div>
   </dialog>
 
-  <script src="/main.js?v=9" type="module"></script>
+  <script src="/main.js?v=10" type="module"></script>
 </body>
 </html>

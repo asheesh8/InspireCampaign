@@ -158,6 +158,11 @@ html[data-vt="theme"]::view-transition-new(root) { animation: 0.7s var(--ease) b
 /* pop mode: comic-book offset on highlighted words */
 [data-theme="pop"] .h1 em, [data-theme="pop"] .h2 em, [data-theme="pop"] .cta__title em { text-shadow: 0.05em 0.05em 0 #07131D; }
 
+/* inline icon sprite: sized in ems so every existing `i` rule still applies */
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.ic { display: inline-flex; align-items: center; justify-content: center; line-height: 0; }
+.ic svg { width: 1em; height: 1em; fill: currentColor; display: block; }
+
 /* ---------------------------------------------------------------- wordmark */
 .mark { display: inline-flex; align-items: center; text-decoration: none; }
 .mark__img {

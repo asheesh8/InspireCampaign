@@ -21,11 +21,8 @@
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.min.css?v=9">
-  <!-- icons paint after the text does, so their stylesheets never block the first render -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"></noscript>
+  <link rel="stylesheet" href="/styles.min.css?v=10">
+
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"Inspire Campaigns",
    "description":"Video production, brand storytelling and paid advertising for Vermont businesses.",
@@ -35,6 +32,7 @@
   </script>
 </head>
 <body>
+  <svg class="sprite" aria-hidden="true" width="0" height="0"><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-arrow-left" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-play-fill" viewBox="0 0 256 256"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></symbol><symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></symbol><symbol id="i-linkedin-logo" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></svg>
   <a class="skip" href="#main">Skip to content</a>
   <span class="sentinel" data-top-sentinel aria-hidden="true"></span>
 
@@ -50,7 +48,7 @@
       <div class="nav__actions">
         <div class="modes" data-modes>
           <button class="modes__btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="modes-menu" data-modes-btn>
-            <span class="modes__cur" data-modes-cur aria-hidden="true">&#9728;&#65039;</span><span class="sr-only">Change colour mode</span><i class="ph ph-caret-down" aria-hidden="true"></i>
+            <span class="modes__cur" data-modes-cur aria-hidden="true">&#9728;&#65039;</span><span class="sr-only">Change colour mode</span><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-caret-down"/></svg></i>
           </button>
           <div class="modes__menu" id="modes-menu" role="menu" aria-label="Colour mode" hidden data-modes-menu>
             <button type="button" role="menuitemradio" aria-checked="false" data-mode="light"><span class="modes__emoji" aria-hidden="true">&#9728;&#65039;</span>Light</button>
@@ -59,7 +57,7 @@
           </div>
         </div>
         <a class="btn btn--primary nav__cta" href="/contact-us.html">Start a project</a>
-        <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="sheet" aria-label="Open menu"><i class="ph ph-list" aria-hidden="true"></i></button>
+        <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="sheet" aria-label="Open menu"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-list"/></svg></i></button>
       </div>
     </div>
   </header>
@@ -69,7 +67,7 @@
     <a href="/services.html">Services</a>
     <a href="/vermont.html">Vermont</a>
     <a href="/about.html">About</a>
-    <a class="btn btn--primary btn--lg" href="/contact-us.html">Start a project<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    <a class="btn btn--primary btn--lg" href="/contact-us.html">Start a project<i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-arrow-right"/></svg></i></a>
     <div class="sheet__meta">
       <a class="link" href="https://www.instagram.com/inspirecampaigns/" target="_blank" rel="noopener">Instagram</a>
       <span>Video and marketing for Vermont brands</span>
@@ -80,7 +78,7 @@
     <section class="case-hero" data-tone="blue">
       <div class="wrap case-hero__inner">
         <div class="case-hero__copy">
-          <a class="back reveal" href="/our-work.html"><i class="ph ph-arrow-left" aria-hidden="true"></i>All work</a>
+          <a class="back reveal" href="/our-work.html"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-arrow-left"/></svg></i>All work</a>
           <p class="case-hero__client reveal">Prop Ready</p>
           <h1 class="h1 reveal" style="--d:1">Prop Ready walk-through</h1>
           <p class="lede reveal" style="--d:2">A tour of the office and the values behind the work, for clients deciding who to hire.</p>
@@ -91,7 +89,7 @@
             <div><dt>Category</dt><dd>Local business</dd></div>
           </dl>
           <div class="case-hero__ctas reveal" style="--d:4" data-hide-dock>
-            <button class="btn btn--primary btn--lg" type="button" data-play="/assets/video/propready-walkthrough.mp4" data-title="Prop Ready walk-through, Prop Ready" data-tall><i class="ph-fill ph-play" aria-hidden="true"></i>Watch with sound</button>
+            <button class="btn btn--primary btn--lg" type="button" data-play="/assets/video/propready-walkthrough.mp4" data-title="Prop Ready walk-through, Prop Ready" data-tall><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-play-fill"/></svg></i>Watch with sound</button>
           </div>
         </div>
         <div class="case-hero__media" style="--ar:9 / 16; view-transition-name:v-propready-walkthrough">
@@ -118,14 +116,14 @@
         <div class="case-map__copy">
           <h2 id="where-title" class="h2 reveal">Filmed in <em>Winooski.</em></h2>
           <p class="lede reveal" style="--d:1">One of the Vermont places we've worked. See them all on the map.</p>
-          <a class="btn btn--ghost reveal" style="--d:2" href="/vermont.html">Open the Vermont map<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          <a class="btn btn--ghost reveal" style="--d:2" href="/vermont.html">Open the Vermont map<i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-arrow-right"/></svg></i></a>
         </div>
       </div>
     </section>
     <a class="next" href="/work/popup-drinks.html" data-tone="yellow">
       <span class="wrap next__inner">
         <span class="next__label">Next project</span>
-        <span class="next__title">Brand showcase<i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+        <span class="next__title">Brand showcase<i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-arrow-right"/></svg></i></span>
         <span class="next__client">Local food pop-up</span>
       </span>
       <img class="next__img" src="/assets/posters/popup-drinks.webp" alt="" loading="lazy">
@@ -135,7 +133,7 @@
     <section class="cta" aria-labelledby="cta-title" data-tone="red">
       <div class="wrap cta__inner">
         <h2 id="cta-title" class="cta__title reveal">Want one <em>like this?</em></h2>
-        <a class="btn btn--primary btn--lg reveal" style="--d:1" href="/contact-us.html" data-hide-dock>Start a project<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        <a class="btn btn--primary btn--lg reveal" style="--d:1" href="/contact-us.html" data-hide-dock>Start a project<i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-arrow-right"/></svg></i></a>
       </div>
     </section>
   </main>
@@ -157,15 +155,15 @@
       </div>
       <div class="foot__col">
         <h2>Connect</h2>
-        <a href="https://www.instagram.com/inspirecampaigns/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>Instagram</a>
-        <a href="https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Javi on LinkedIn</a>
+        <a href="https://www.instagram.com/inspirecampaigns/" target="_blank" rel="noopener"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-instagram-logo"/></svg></i>Instagram</a>
+        <a href="https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/" target="_blank" rel="noopener"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-linkedin-logo"/></svg></i>Javi on LinkedIn</a>
       </div>
       <p class="foot__credit">&copy; 2026 Inspire Campaigns. Artwork: Eadweard Muybridge, <i>The Horse in Motion</i> (1878), and Thomas Edison's patent drawings for the electric lamp (1880) and Kinetoscope (1902), all public domain. Map: U.S. Census Bureau county boundaries.</p>
     </div>
   </footer>
 
   <div class="dock" data-dock>
-    <a class="btn btn--primary dock__cta" href="/contact-us.html">Start a project<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    <a class="btn btn--primary dock__cta" href="/contact-us.html">Start a project<i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-arrow-right"/></svg></i></a>
   </div>
 
   <dialog class="player" data-player aria-label="Video player">
@@ -174,10 +172,10 @@
     </div>
     <div class="player__bar">
       <p class="player__title" data-player-title></p>
-      <button class="player__close" type="button" data-player-close aria-label="Close video"><i class="ph ph-x" aria-hidden="true"></i></button>
+      <button class="player__close" type="button" data-player-close aria-label="Close video"><i class="ic" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#i-x"/></svg></i></button>
     </div>
   </dialog>
 
-  <script src="/main.js?v=9" type="module"></script>
+  <script src="/main.js?v=10" type="module"></script>
 </body>
 </html>
