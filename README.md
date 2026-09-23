@@ -25,4 +25,4 @@ python3 -m http.server 5179
 
 ## Before launch
 
-Live at https://inspirecampaigns.com (Vercel project `inspire-campaign`, auto-deploys from `main`; `www` redirects to the apex). Search the code for `TODO(owner)`. Open items: permission to show the UVM and Vermont State logos, confirm the BNI award date (June 2026), confirm client names for the unnamed food pop-up (its logo reads BREW) and market vendor, confirm Prop Ready's Winooski location for the map, and higher-resolution originals of the Mechayeh and market-vendor videos (only 480p was on Wix).
+Live at https://inspirecampaigns.com (Vercel project `inspire-campaign`, auto-deploys from `main`; `www` redirects to the apex). Search the code for `TODO(owner)`. Open items: confirm the BNI award date (June 2026), confirm client names for the unnamed food pop-up (its logo reads BREW) and market vendor, confirm Prop Ready's Winooski location for the map, and higher-resolution originals of the Mechayeh and market-vendor videos (only 480p was on Wix).
