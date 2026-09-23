@@ -6,11 +6,15 @@ const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
 const root = document.documentElement;
 
 /* ---------- smooth scrolling (Lenis) in light and dark. Trippy mode and reduced motion scroll natively. ---------- */
-let lenis = null;
-const syncSmooth = () => {
-  const want = !reduceMotion && window.Lenis && root.dataset.theme !== 'pop';
-  if (want && !lenis) lenis = new window.Lenis({ lerp: 0.1, wheelMultiplier: 0.95, anchors: { offset: -84 }, autoRaf: true });
-  if (!want && lenis) { lenis.destroy(); lenis = null; }
+let lenis = null, lenisLib = null;
+const syncSmooth = async () => {
+  const want = !reduceMotion && root.dataset.theme !== 'pop';
+  if (!want) { if (lenis) { lenis.destroy(); lenis = null; } return; }
+  if (lenis) return;
+  // fetched only when a mode actually uses it, so Trippy (the default) pays nothing for it
+  if (!lenisLib) lenisLib = (await import('https://cdn.jsdelivr.net/npm/lenis@1.3.26/+esm').catch(() => null))?.default;
+  if (!lenisLib || root.dataset.theme === 'pop') return;
+  lenis = new lenisLib({ lerp: 0.1, wheelMultiplier: 0.95, anchors: { offset: -84 }, autoRaf: true });
 };
 syncSmooth();
 const lockScroll = (on) => { if (lenis) on ? lenis.stop() : lenis.start(); };
@@ -111,14 +115,20 @@ const revealer = new IntersectionObserver((entries) => {
 $$('.reveal').forEach((el) => revealer.observe(el));
 
 /* ---------- autoplaying loops: pause off screen, never autoplay under reduced motion ---------- */
-const loops = $$('video[autoplay]');
-if (reduceMotion) loops.forEach((v) => { v.removeAttribute('autoplay'); v.pause(); });
-else {
+const loops = $$('video[data-autoplay]');
+if (!reduceMotion) {
   const io = new IntersectionObserver((entries) => entries.forEach((e) => {
     const v = e.target;
-    if (e.isIntersecting) v.play().catch(() => {}); else v.pause();
-  }));
+    if (!e.isIntersecting) return v.pause();
+    if (!v.src && v.dataset.src) v.src = v.dataset.src; // the file is only fetched once it is on screen
+    v.play().catch(() => {});
+  }), { rootMargin: '150px' });
   loops.forEach((v) => io.observe(v));
+}
+// the hero's blurred colour wash is decorative and hidden in Trippy mode: never fetch it there
+const glow = $('.hero__glow video');
+if (glow && !reduceMotion && root.dataset.theme !== 'pop' && innerWidth > 700) {
+  addEventListener('load', () => { glow.src = glow.dataset.src; glow.play().catch(() => {}); }, { once: true });
 }
 
 /* ---------- hero reels drift toward the pointer (eased, so it never snaps) ---------- */
@@ -185,7 +195,7 @@ if (player) {
     video.removeAttribute('src');
     video.load();
     lockScroll(false);
-    if (!reduceMotion) $$('.hero video').forEach((v) => v.play().catch(() => {}));
+    if (!reduceMotion) $$('.hero video[src]').forEach((v) => v.play().catch(() => {}));
     opener?.focus();
   });
   $('[data-player-close]', player).addEventListener('click', close);
@@ -198,7 +208,7 @@ if (player) {
     player.classList.toggle('is-tall', btn.hasAttribute('data-tall'));
     title.textContent = btn.dataset.title || '';
     video.src = btn.dataset.play;
-    $$('.hero video').forEach((v) => v.pause());
+    $$('.hero video[src]').forEach((v) => v.pause());
     lockScroll(true);
     player.showModal();
     video.play().catch(() => {});

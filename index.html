@@ -19,15 +19,14 @@
     })();
   </script>
   <link rel="icon" href="/assets/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css">
+  <link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="/assets/posters/popup-food.webp">
-  <link rel="stylesheet" href="/styles.css?v=8">
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
+  <link rel="stylesheet" href="/styles.min.css?v=9">
+  <!-- icons paint after the text does, so their stylesheets never block the first render -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"></noscript>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"Inspire Campaigns",
    "description":"Video production, brand storytelling and paid advertising for Vermont businesses.",
@@ -93,19 +92,19 @@
         </div>
         <div class="hero__stage" aria-label="Recent work" data-stage>
           <div class="hero__glow" aria-hidden="true">
-            <video src="/assets/video/hero-loop.mp4" muted loop playsinline autoplay preload="auto"></video>
+            <video data-src="/assets/video/hero-loop.mp4" muted loop playsinline preload="none"></video>
           </div>
           <div class="hero__sun" aria-hidden="true"></div>
           <button class="reel reel--a" type="button" data-depth="0.6" data-play="/assets/video/propready-estimate.mp4" data-title="From estimate to end, Prop Ready" data-tall aria-label="Play From estimate to end for Prop Ready">
-            <span class="reel__float"><video src="/assets/video/propready-estimate-preview.mp4" poster="/assets/posters/propready-estimate.webp" muted loop playsinline autoplay preload="metadata"></video></span>
+            <span class="reel__float"><video data-src="/assets/video/propready-estimate-preview.mp4" poster="/assets/posters/propready-estimate.webp" muted loop playsinline data-autoplay preload="none"></video></span>
             <span class="reel__tag"><i class="ph-fill ph-play" aria-hidden="true"></i>Prop Ready</span>
           </button>
           <button class="reel reel--b" type="button" data-depth="1" data-play="/assets/video/popup-food.mp4" data-title="Food showcase, local food pop-up" data-tall aria-label="Play Food showcase for a local food pop-up">
-            <span class="reel__float"><video src="/assets/video/popup-food-preview.mp4" poster="/assets/posters/popup-food.webp" muted loop playsinline autoplay preload="metadata"></video></span>
+            <span class="reel__float"><video data-src="/assets/video/popup-food-preview.mp4" poster="/assets/posters/popup-food.webp" muted loop playsinline data-autoplay preload="none"></video></span>
             <span class="reel__tag"><i class="ph-fill ph-play" aria-hidden="true"></i>Food pop-up</span>
           </button>
           <button class="reel reel--c" type="button" data-depth="0.8" data-play="/assets/video/mechayeh-product.mp4" data-title="Product showcase, Mechayeh" data-tall aria-label="Play Product showcase for Mechayeh">
-            <span class="reel__float"><video src="/assets/video/mechayeh-product-preview.mp4" poster="/assets/posters/mechayeh-product.webp" muted loop playsinline autoplay preload="metadata"></video></span>
+            <span class="reel__float"><video data-src="/assets/video/mechayeh-product-preview.mp4" poster="/assets/posters/mechayeh-product.webp" muted loop playsinline data-autoplay preload="none"></video></span>
             <span class="reel__tag"><i class="ph-fill ph-play" aria-hidden="true"></i>Mechayeh</span>
           </button>
         </div>
@@ -126,10 +125,10 @@
     <section class="clients" aria-label="Clients">
       <div class="wrap clients__row reveal">
         <span class="clients__label">Trusted by</span>
-        <span class="logo" role="img" aria-label="University of Vermont" style="--src:url(/assets/logos/uvm.png); --ar:501/160; --h:42px"></span>
-        <span class="logo" role="img" aria-label="Vermont State University" style="--src:url(/assets/logos/vermont-state.png); --ar:236/200; --h:58px"></span>
-        <span class="logo" role="img" aria-label="Prop Ready" style="--src:url(/assets/logos/prop-ready.png); --ar:274/200; --h:58px"></span>
-        <span class="logo" role="img" aria-label="The Johnson Health Center" style="--src:url(/assets/logos/johnson-health-center.png); --ar:192/200; --h:76px"></span>
+        <span class="logo" role="img" aria-label="University of Vermont" style="--src:url(/assets/logos/uvm.webp); --ar:501/160; --h:42px"></span>
+        <span class="logo" role="img" aria-label="Vermont State University" style="--src:url(/assets/logos/vermont-state.webp); --ar:236/200; --h:58px"></span>
+        <span class="logo" role="img" aria-label="Prop Ready" style="--src:url(/assets/logos/prop-ready.webp); --ar:274/200; --h:58px"></span>
+        <span class="logo" role="img" aria-label="The Johnson Health Center" style="--src:url(/assets/logos/johnson-health-center.webp); --ar:192/200; --h:76px"></span>
       </div>
     </section>
 
@@ -137,7 +136,12 @@
     <section class="work" id="work" aria-labelledby="work-title" data-tone="blue">
       <div class="wrap">
         <div class="bento">
-          <article class="tile reveal span-4" data-tile data-cat="nonprofit" data-tone="red">
+          <div class="work__head">
+            <p class="eyebrow reveal">Selected work</p>
+            <h2 id="work-title" class="h2 reveal">Made for the screens your customers <em>actually watch.</em></h2>
+            <p class="lede reveal" style="--d:1">Play any video with sound, or open a project for the full story.</p>
+          </div>
+          <article class="tile reveal lead" data-tile data-cat="nonprofit" data-tone="red">
     <div class="tile__media" style="--ar:9 / 16; view-transition-name:v-jhc-better-vermont">
       <img src="/assets/posters/jhc-better-vermont.webp" width="432" height="768" alt="Motion graphic of five figures, one in red, above the word Vermont." loading="lazy">
       <video data-src="/assets/video/jhc-better-vermont-preview.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
@@ -150,13 +154,7 @@
       <p class="tile__note">An animated explainer on harm reduction with one clear call to action. Monthly social views and donations went up after it ran.</p>
     </div>
   </article>
-          <div class="feature">
-            <div class="work__head">
-              <p class="eyebrow reveal">Selected work</p>
-              <h2 id="work-title" class="h2 reveal">Made for the screens your customers <em>actually watch.</em></h2>
-              <p class="lede reveal" style="--d:1">Play any video with sound, or open a project for the full story.</p>
-            </div>
-            <article class="tile reveal wide" data-tile data-cat="community" data-tone="red">
+          <article class="tile reveal wide" data-tile data-cat="community" data-tone="red">
     <div class="tile__media" style="--ar:1024 / 460; view-transition-name:v-festival-of-fools">
       <img src="/assets/posters/festival-of-fools.webp" width="768" height="345" alt="A street performer in front of a packed crowd on a Burlington street." loading="lazy">
       <video data-src="/assets/video/festival-of-fools-preview.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
@@ -169,7 +167,6 @@
       <p class="tile__note">Burlington's street festival, shot for the love of it. No brief, just the crowd.</p>
     </div>
   </article>
-          </div>
           <article class="tile reveal span-3" data-tile data-cat="food" data-tone="yellow">
     <div class="tile__media" style="--ar:9 / 16; view-transition-name:v-market-vendor">
       <img src="/assets/posters/market-vendor.webp" width="432" height="768" alt="A burger on a griddle at a market stall, with a yellow caption across the top." loading="lazy">
@@ -332,6 +329,6 @@
     </div>
   </dialog>
 
-  <script src="/main.js?v=8" type="module"></script>
+  <script src="/main.js?v=9" type="module"></script>
 </body>
 </html>

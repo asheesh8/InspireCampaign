@@ -18,7 +18,7 @@ from pathlib import Path
 from waves import waves
 
 ROOT = Path(__file__).resolve().parent.parent
-V = "8"  # bump to bust caches after CSS/JS edits
+V = "9"  # bump to bust caches after CSS/JS edits
 CONTACT = "/contact-us.html"
 IG = "https://www.instagram.com/inspirecampaigns/"
 LI_JAVI = "https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/"
@@ -152,14 +152,13 @@ HEAD = """<!doctype html>
     }})();
   </script>
   <link rel="icon" href="/assets/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css">
-  {preload}<link rel="stylesheet" href="/styles.css?v={v}">
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
+  <link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  {preload}<link rel="stylesheet" href="/styles.min.css?v={v}">
+  <!-- icons paint after the text does, so their stylesheets never block the first render -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"></noscript>
   <script type="application/ld+json">
   {{"@context":"https://schema.org","@type":"ProfessionalService","name":"Inspire Campaigns",
    "description":"Video production, brand storytelling and paid advertising for Vermont businesses.",
@@ -335,7 +334,7 @@ def case_page(slug):
           </div>
         </div>
         <div class="case-hero__media" style="--ar:{ar}; view-transition-name:v-{slug}">
-          <video src="/assets/video/{slug}-preview.mp4" poster="/assets/posters/{slug}.webp" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>
+          <video data-src="/assets/video/{slug}-preview.mp4" poster="/assets/posters/{slug}.webp" muted loop playsinline data-autoplay preload="none" aria-hidden="true"></video>
         </div>
       </div>
     </section>
@@ -405,6 +404,19 @@ def render(title, desc, key, body, og="popup-food", preload=""):
                         v=V, ig=IG, li_javi=LI_JAVI)
             + header(key) + expand(body) + FOOTER)
 
+
+def minify_css(css):
+    """Strip comments and needless whitespace. Keeps behaviour identical; styles.css stays the editable source."""
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    css = re.sub(r"\s*\n\s*", "", css)
+    css = re.sub(r"\s{2,}", " ", css)
+    css = re.sub(r"\s*([{}:;,>])\s*", r"\1", css)
+    return css.replace(";}", "}").strip()
+
+
+src = (ROOT / "styles.css").read_text()
+(ROOT / "styles.min.css").write_text(minify_css(src))
+print(f"wrote styles.min.css ({len(src) // 1024} KB -> {len(minify_css(src)) // 1024} KB)")
 
 for out, key, title, desc in PAGES:
     body = (ROOT / "pages" / out).read_text()

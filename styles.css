@@ -3,6 +3,39 @@
    The red / yellow / blue triad runs through all three; sections pick one with data-tone.
    Artwork is public-domain Muybridge and Edison (CSS masks) plus generated pop-art wave bands (scripts/waves.py). */
 
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 400 800;
+  font-stretch: 75% 100%;
+  font-display: swap;
+  src: url('/assets/fonts/bricolage-grotesque.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/geist.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/geist-mono.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Lenis (smooth scrolling) base rules, inlined so it costs no extra request */
+html.lenis, html.lenis body { height: auto; }
+.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+
 /* ---------------------------------------------------------------- tokens */
 [data-theme="light"] {
   --bg: #F3F1EC; --bg-2: #E8E5DD; --bg-3: #FCFBF8;
@@ -129,8 +162,8 @@ html[data-vt="theme"]::view-transition-new(root) { animation: 0.7s var(--ease) b
 .mark { display: inline-flex; align-items: center; text-decoration: none; }
 .mark__img {
   display: block; width: 76px; height: 46px; background: var(--ink); transition: background-color 0.5s;
-  -webkit-mask: url("/assets/logos/inspire-wordmark.png") center / contain no-repeat;
-  mask: url("/assets/logos/inspire-wordmark.png") center / contain no-repeat;
+  -webkit-mask: url("/assets/logos/inspire-wordmark.webp") center / contain no-repeat;
+  mask: url("/assets/logos/inspire-wordmark.webp") center / contain no-repeat;
 }
 .mark--foot .mark__img { width: 112px; height: 68px; }
 
@@ -396,7 +429,10 @@ section > .wrap, .page-head > .wrap { position: relative; z-index: 1; }
 .tile__note { color: var(--ink-2); font-size: 0.98rem; max-width: 44ch; text-wrap: pretty; }
 .span-4 { grid-column: span 4; } .span-3 { grid-column: span 3; } .span-8 { grid-column: span 8; }
 .push { margin-top: clamp(0px, 6vw, 90px); }
-.feature { grid-column: span 8; display: grid; gap: 20px; align-content: end; }
+/* desktop work grid: heading top-right, the tall film down the left, the wide film beneath the heading */
+.work__head { grid-column: 5 / -1; margin-bottom: 0; }
+.tile.lead { grid-column: 1 / 5; grid-row: 1 / span 2; }
+.tile.wide { grid-column: 5 / -1; align-self: end; }
 .more-cell {
   align-self: stretch; display: flex; flex-direction: column; justify-content: flex-end; gap: 16px;
   border-radius: var(--r); background: var(--bg-2); padding: clamp(20px, 2.4vw, 32px); text-decoration: none;
@@ -783,8 +819,8 @@ section > .wrap, .page-head > .wrap { position: relative; z-index: 1; }
   /* the work grid: heading first, the wide festival film next, then the vertical videos two by two */
   .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 14px; }
   .bento > * { grid-column: span 1; }
-  .feature { display: contents; }
   .work__head { grid-column: 1 / -1; order: -2; margin-bottom: 4px; }
+  .tile.lead { grid-column: span 1; grid-row: auto; }
   .bento .wide { grid-column: 1 / -1; order: -1; }
   .push { margin-top: 0; }
   .more-cell { grid-column: 1 / -1; min-height: 0; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 10px 18px; }

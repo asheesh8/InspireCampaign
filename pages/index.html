@@ -14,19 +14,19 @@
         </div>
         <div class="hero__stage" aria-label="Recent work" data-stage>
           <div class="hero__glow" aria-hidden="true">
-            <video src="/assets/video/hero-loop.mp4" muted loop playsinline autoplay preload="auto"></video>
+            <video data-src="/assets/video/hero-loop.mp4" muted loop playsinline preload="none"></video>
           </div>
           <div class="hero__sun" aria-hidden="true"></div>
           <button class="reel reel--a" type="button" data-depth="0.6" data-play="/assets/video/propready-estimate.mp4" data-title="From estimate to end, Prop Ready" data-tall aria-label="Play From estimate to end for Prop Ready">
-            <span class="reel__float"><video src="/assets/video/propready-estimate-preview.mp4" poster="/assets/posters/propready-estimate.webp" muted loop playsinline autoplay preload="metadata"></video></span>
+            <span class="reel__float"><video data-src="/assets/video/propready-estimate-preview.mp4" poster="/assets/posters/propready-estimate.webp" muted loop playsinline data-autoplay preload="none"></video></span>
             <span class="reel__tag"><i class="ph-fill ph-play" aria-hidden="true"></i>Prop Ready</span>
           </button>
           <button class="reel reel--b" type="button" data-depth="1" data-play="/assets/video/popup-food.mp4" data-title="Food showcase, local food pop-up" data-tall aria-label="Play Food showcase for a local food pop-up">
-            <span class="reel__float"><video src="/assets/video/popup-food-preview.mp4" poster="/assets/posters/popup-food.webp" muted loop playsinline autoplay preload="metadata"></video></span>
+            <span class="reel__float"><video data-src="/assets/video/popup-food-preview.mp4" poster="/assets/posters/popup-food.webp" muted loop playsinline data-autoplay preload="none"></video></span>
             <span class="reel__tag"><i class="ph-fill ph-play" aria-hidden="true"></i>Food pop-up</span>
           </button>
           <button class="reel reel--c" type="button" data-depth="0.8" data-play="/assets/video/mechayeh-product.mp4" data-title="Product showcase, Mechayeh" data-tall aria-label="Play Product showcase for Mechayeh">
-            <span class="reel__float"><video src="/assets/video/mechayeh-product-preview.mp4" poster="/assets/posters/mechayeh-product.webp" muted loop playsinline autoplay preload="metadata"></video></span>
+            <span class="reel__float"><video data-src="/assets/video/mechayeh-product-preview.mp4" poster="/assets/posters/mechayeh-product.webp" muted loop playsinline data-autoplay preload="none"></video></span>
             <span class="reel__tag"><i class="ph-fill ph-play" aria-hidden="true"></i>Mechayeh</span>
           </button>
         </div>
@@ -47,10 +47,10 @@
     <section class="clients" aria-label="Clients">
       <div class="wrap clients__row reveal">
         <span class="clients__label">Trusted by</span>
-        <span class="logo" role="img" aria-label="University of Vermont" style="--src:url(/assets/logos/uvm.png); --ar:501/160; --h:42px"></span>
-        <span class="logo" role="img" aria-label="Vermont State University" style="--src:url(/assets/logos/vermont-state.png); --ar:236/200; --h:58px"></span>
-        <span class="logo" role="img" aria-label="Prop Ready" style="--src:url(/assets/logos/prop-ready.png); --ar:274/200; --h:58px"></span>
-        <span class="logo" role="img" aria-label="The Johnson Health Center" style="--src:url(/assets/logos/johnson-health-center.png); --ar:192/200; --h:76px"></span>
+        <span class="logo" role="img" aria-label="University of Vermont" style="--src:url(/assets/logos/uvm.webp); --ar:501/160; --h:42px"></span>
+        <span class="logo" role="img" aria-label="Vermont State University" style="--src:url(/assets/logos/vermont-state.webp); --ar:236/200; --h:58px"></span>
+        <span class="logo" role="img" aria-label="Prop Ready" style="--src:url(/assets/logos/prop-ready.webp); --ar:274/200; --h:58px"></span>
+        <span class="logo" role="img" aria-label="The Johnson Health Center" style="--src:url(/assets/logos/johnson-health-center.webp); --ar:192/200; --h:76px"></span>
       </div>
     </section>
 
@@ -58,15 +58,13 @@
     <section class="work" id="work" aria-labelledby="work-title" data-tone="blue">
       <div class="wrap">
         <div class="bento">
-          <!--tile:jhc-better-vermont:span-4:note-->
-          <div class="feature">
-            <div class="work__head">
-              <p class="eyebrow reveal">Selected work</p>
-              <h2 id="work-title" class="h2 reveal">Made for the screens your customers <em>actually watch.</em></h2>
-              <p class="lede reveal" style="--d:1">Play any video with sound, or open a project for the full story.</p>
-            </div>
-            <!--tile:festival-of-fools:wide:note-->
+          <div class="work__head">
+            <p class="eyebrow reveal">Selected work</p>
+            <h2 id="work-title" class="h2 reveal">Made for the screens your customers <em>actually watch.</em></h2>
+            <p class="lede reveal" style="--d:1">Play any video with sound, or open a project for the full story.</p>
           </div>
+          <!--tile:jhc-better-vermont:lead:note-->
+          <!--tile:festival-of-fools:wide:note-->
           <!--tile:market-vendor:span-3:-->
           <!--tile:propready-walkthrough:span-3 push:-->
           <!--tile:popup-drinks:span-3:-->

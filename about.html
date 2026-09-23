@@ -19,14 +19,13 @@
     })();
   </script>
   <link rel="icon" href="/assets/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css">
-  <link rel="stylesheet" href="/styles.css?v=8">
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
+  <link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.min.css?v=9">
+  <!-- icons paint after the text does, so their stylesheets never block the first render -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"></noscript>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"Inspire Campaigns",
    "description":"Video production, brand storytelling and paid advertising for Vermont businesses.",
@@ -128,10 +127,10 @@
     <section class="clients" aria-label="Clients">
       <div class="wrap clients__row reveal">
         <span class="clients__label">Brands we've worked with</span>
-        <span class="logo" role="img" aria-label="University of Vermont" style="--src:url(/assets/logos/uvm.png); --ar:501/160; --h:42px"></span>
-        <span class="logo" role="img" aria-label="Vermont State University" style="--src:url(/assets/logos/vermont-state.png); --ar:236/200; --h:58px"></span>
-        <span class="logo" role="img" aria-label="Prop Ready" style="--src:url(/assets/logos/prop-ready.png); --ar:274/200; --h:58px"></span>
-        <span class="logo" role="img" aria-label="The Johnson Health Center" style="--src:url(/assets/logos/johnson-health-center.png); --ar:192/200; --h:76px"></span>
+        <span class="logo" role="img" aria-label="University of Vermont" style="--src:url(/assets/logos/uvm.webp); --ar:501/160; --h:42px"></span>
+        <span class="logo" role="img" aria-label="Vermont State University" style="--src:url(/assets/logos/vermont-state.webp); --ar:236/200; --h:58px"></span>
+        <span class="logo" role="img" aria-label="Prop Ready" style="--src:url(/assets/logos/prop-ready.webp); --ar:274/200; --h:58px"></span>
+        <span class="logo" role="img" aria-label="The Johnson Health Center" style="--src:url(/assets/logos/johnson-health-center.webp); --ar:192/200; --h:76px"></span>
       </div>
     </section>
 
@@ -183,6 +182,6 @@
     </div>
   </dialog>
 
-  <script src="/main.js?v=8" type="module"></script>
+  <script src="/main.js?v=9" type="module"></script>
 </body>
 </html>
