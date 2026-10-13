@@ -18,7 +18,7 @@ from pathlib import Path
 from waves import waves
 
 ROOT = Path(__file__).resolve().parent.parent
-V = "10"  # bump to bust caches after CSS/JS edits
+V = "11"  # bump to bust caches after CSS/JS edits
 CONTACT = "/contact-us.html"
 IG = "https://www.instagram.com/inspirecampaigns/"
 LI_JAVI = "https://www.linkedin.com/in/javier-matos-rodriguez-aa202a249/"
