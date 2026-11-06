@@ -1,6 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/work/festival-of-fools", "destination": "/work/dragon-boat-festival", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/assets/fonts/(.*)",
